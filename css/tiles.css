@@ -1,0 +1,208 @@
+﻿
+.tile12 {
+    color: white !important;
+    background-color: #009688 !important;
+}
+
+    .tile12 a {
+        color: white !important;
+        background-color: #009688 !important;
+    }
+
+        .tile12 a:hover {
+            color: white !important;
+            background-color: #004D40 !important;
+        }
+
+    .tile12 div {
+        color: white !important;
+        background-color: #80CBC4 !important;
+        cursor: not-allowed;
+    }
+
+.tile1 {
+    color: white !important;
+    background-color: #2196F3 !important;
+}
+
+    .tile1 a { /*Red A700*/
+        color: white !important;
+        background-color: #2196F3 !important;
+    }
+
+        .tile1:hover {
+            color: white !important;
+            background-color: #0D47A1 !important;
+        }
+
+    .tile1 div {
+        color: white !important;
+        background-color: #64B5F6 !important;
+        cursor: not-allowed;
+    }
+
+.tile2 { /*Red A700*/
+    color: white !important;
+    background-color: #607D8B !important;
+}
+
+     
+
+.tile3 { /*Pink A700*/
+    color: white !important;
+    background-color: #E91E63 !important;
+}
+
+    
+
+.tile4 { /*Purple 500*/
+    color: white !important;
+    background-color: #3F51B5 !important;
+}
+ 
+ 
+.tile5 { /*Cyan 800*/
+    color: white !important;
+    background-color: #00BCD4 !important;
+}
+ 
+
+.tile6 { /*Lime 800*/
+    color: white !important;
+    background-color: #FF5722 !important;
+}
+
+     
+
+.tile7 { /*Brown 500*/
+    color: white !important;
+    background-color: #795548 !important;
+}
+
+    
+
+.tile8 { /*Grey 500*/
+    color: white !important;
+    background-color: #9E9E9E !important;
+}
+
+    
+.tile9 {
+    color: white !important;
+    background-color: #00c6ff !important;
+}
+
+   
+
+
+.tile10 { /*Pink 900*/
+    background: #003265 !important;
+    color: white !important;
+}
+ 
+.tile11  { /* 50 shades of grey */
+    background: #f0ca28 !important;
+    color: white !important;
+    cursor: pointer;
+}
+ 
+    .tile13  { /* 50 shades of grey */
+    background: #7c3a2d !important;
+    color: white !important;
+    cursor: pointer;
+}
+     
+    .tile14  { /* 50 shades of grey */
+    background: #5f6c72 !important;
+    color: white !important;
+    cursor: pointer;
+}
+     
+    .tile15  { /* 50 shades of grey */
+    background: #376db6 !important;
+    color: white !important;
+    cursor: pointer;
+} 
+    .tile16 { /* 50 shades of grey */
+    background: #00363d !important;
+    color: white !important;
+    cursor: pointer;
+}
+     
+     
+    .tile17   {
+        background: #004851 !important;
+        color: white !important;
+        cursor: not-allowed;
+    }
+    .tile18  { /* 50 shades of grey */
+    background: #9d0a0e !important;
+    color: white !important;
+    cursor: pointer;
+} 
+    .tile19  { /* 50 shades of grey */
+    background: #e60000 !important;
+    color: white !important;
+    cursor: pointer;
+}
+     
+    .tile20  { /* 50 shades of grey */
+    background: #694d88 !important;
+    color: white !important;
+    cursor: pointer;
+}
+
+    
+    .tile21  { /* 50 shades of grey */
+    background: #00274c !important;
+    color: white !important;
+    cursor: pointer;
+}
+     
+    .tile22  { /* 50 shades of grey */
+    background: #51e898 !important;
+    color: white !important;
+    cursor: pointer;
+}
+     
+    .tile23  { /* 50 shades of grey */
+    background: #998542 !important;
+    color: white !important;
+    cursor: pointer;
+}
+     
+    .tile24  { /* 50 shades of grey */
+    background: #f24c7c !important;
+    color: white !important;
+    cursor: pointer;
+}
+
+   
+
+         
+.metr {
+    width: auto;
+    padding: 5px;
+    height: auto;
+    display: table;
+}
+
+.metrostyle {
+    height: 100px;
+    width: 128px;
+    float: left;
+    margin: 0 5px 5px 0;
+    padding: 2px;
+}
+
+    .metrostyle:hover {
+        background-color: #5190d9;
+    }
+
+.metrostylelarge {
+    width: 260px;
+    height: 100px;
+     float: left;
+    margin: 0 5px 5px 0;
+    padding: 2px;
+}

@@ -1,0 +1,352 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Pages_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    
+    <link href="../assets/css/all.css" rel="stylesheet" />
+ <link href="../../assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="../assets/custom_css/components.css" rel="stylesheet" />
+<script src="../../assets/js/bootstrap.js"></script>
+   
+    <script src="../assets/1.11.1jquery.min.js"></script>
+     
+    <link href="../css/toster.css" rel="stylesheet" />
+    <script src="../assets/js/toster.js"></script>
+    <style>
+        body
+        {
+            overflow-x:hidden!important;
+        }
+          .bg
+  {
+    
+     background: linear-gradient(180deg, #fbf1d5 0%, #ffffff 100%)
+
+  }
+    </style>
+  <script>
+     function success(msg) {
+         //         toastr.options.positionClass = "toast-bottom-left";
+         toastr.options.positionClass = "toast-bottom-right";
+         toastr.success(msg);
+     }
+     function warning(msg) {
+         //        toastr.options.timeOut = 1500; // 1.5s
+         toastr.options.positionClass = "toast-bottom-right";
+         toastr.warning(msg);
+     }
+     function info(msg) {
+         //        toastr.options.timeOut = 1500; // 1.5s
+         toastr.options.positionClass = "toast-bottom-right";
+         toastr.info(msg);
+     }
+     function error(msg) {
+         //        toastr.options.timeOut = 1500; // 1.5s
+         toastr.options.positionClass = "toast-top-right";
+         toastr.error(msg);
+     }
+  </script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+   
+                       <div class="list-group">
+           <div class="list-group-item bg1  list-group-item-light pt-0 pb-0" style="background-image: url(../css/images/bg.png)">
+               <div class="row ">
+                   <div class="col-3 d-flex  text-truncate my-auto">
+                      
+                       <img src="../css/images/logo.jpg" height="50px" class="my-auto" />
+                       <div class="ms-2">
+                         <%--  <span class="text-dark-secondary fw-semi-bold"><%:SocietyName() %></span>
+                           <div class="text-dark-secondary fs-6"><%:InstituteName() %></div>--%>
+
+                       </div>
+                   </div>
+                   <div class="col-7 text-center d-flex justify-content-center">
+
+                       <a class='<%:Page.Title=="Home"? " btn btn-sm text-white bg-secondary":" btn btn-sm  " %>' href="/../default.aspx"><i class="fa-solid fa-house fa-2x"></i>
+                           <br />
+                           Home</a>
+                       <a class='<%:Page.Title=="QuestionMaster"? "btn btn-sm text-white bg-secondary":" btn btn-sm   " %>' href="/Pages/QuestionMaster.aspx"><i class="fa-solid fa-plus fa-2x"></i>
+                           <br />
+                           Question Master</a>
+                       <a class='<%:Page.Title=="ExamMater"? " btn btn-sm text-white bg-secondary":" btn btn-sm   " %>' href="/Pages/ExamMaster.aspx"><i class="fa-solid fa-layer-group fa-2x"></i>
+                           <br />
+                           Exam Master</a>
+                       <a class='<%:Page.Title=="GENERATE SERIES"? " btn btn-sm text-white bg-secondary":" btn btn-sm  " %>' href="/Pages/Gen_Series.aspx"><i class="fa-solid fa fa-file-alt fa-2x"></i>
+                           <br />
+                           GENERATE SERIES</a>
+
+                       <a class='<%:Page.Title=="STUDENT EXAM MAPPING"? " btn btn-sm text-white bg-secondary":" btn btn-sm  " %>' href="/Pages/StudentExamMapping.aspx"><i class="fa-solid fa-user-check fa-2x"></i>
+                           <br />
+                           STUDENT MAPPING</a>
+
+
+                       <asp:Panel ID="pnlCollege" runat="server" Visible="false">
+                           <a class='<%:Page.Title.Contains("Indent :")==true? " btn btn-sm dropdown has-megamenu   text-primary":" btn btn-sm dropdown has-megamenu" %>' data-bs-toggle="dropdown"><i class="fa-solid fa-plus fa-3x my-auto text-dark-warning  fa-2x"></i>
+                               <br />
+                               Indent</a>
+                           <div class="dropdown-menu megamenu w-100 bg-light border-bottom border-2 border-dark-primary" role="menu">
+                               <div class="container-lg ">
+                                   <div class="row g-1">
+                                       <div class="col-12 col-md-6   col-lg-3  col-xl-3 ">
+                                           <div class="list-group d-flex align-items-stretch">
+                                               <a aria-current="page" href="/Pages/Indent/New.aspx" class='<%:Page.Title.Contains("Indent : New")==true ? "list-group-item d-flex border-2 border-dark-primary ico bg-light-warning  ":"list-group-item d-flex border-1 border-dark-secondary ico  "%>'>
+                                                   <i class="fa-solid fa-plus fa-3x my-auto text-dark-warning"></i>
+                                                   <div class="ms-3">
+                                                       <span class="fw-bold fs-4">New Indent</span>
+                                                       <br />
+                                                       <p class="text-secondary  fs-6 my-auto lh-sm text-truncate-line-2">Create new PO Indent, Non-PO Indent, General Expenditure etc 
+                                                       <br />
+                                                       <br />
+
+                                                       </p>
+                                                   </div>
+                                               </a>
+                                           </div>
+                                       </div>
+                                       <div class="col-12 col-md-6   col-lg-3  col-xl-3 ">
+                                           <div class="list-group d-flex align-items-stretch">
+                                               <a aria-current="page" href="/Pages_Admin/AddSections.aspx" class='<%:Page.Title.Contains(": Sections")==true ? "list-group-item d-flex border-2 border-dark-primary ico bg-light-warning":"list-group-item d-flex border-1 border-dark-secondary ico"%>'>
+                                                   
+                                                 <i class="fa-regular fa-circle-check  fa-3x my-auto text-dark-success"></i>  <div class="ms-3">
+                                                       <span class="fw-bold fs-4">Approved Indents</span>
+                                                       <br />
+                                                       <p class="text-secondary  fs-6 my-auto lh-sm  text-truncate-line-2">
+                                                           Create Association Sections (Department)
+                                       <br />
+                                                           <br />
+                                                       </p>
+
+                                                   </div>
+                                               </a>
+                                           </div>
+                                       </div>
+                                       <div class="col-12 col-md-6   col-lg-3  col-xl-3 ">
+                                           <div class="list-group">
+                                               <a aria-current="page" href="/Pages_Admin/AddInstitutes.aspx" class='<%:Page.Title.Contains(": Institutes")==true ? "list-group-item d-flex border-2 border-dark-primary ico bg-light-warning":"list-group-item d-flex border-1 border-dark-secondary ico"%>'>
+                                                   
+                                                  <i class="fa-regular fa-clock fa-3x my-auto text-dark-warning"></i> <div class="ms-3">
+                                                       <span class="fw-bold fs-4">Pending Indents</span>
+                                                       <br />
+                                                       <p class="text-secondary  fs-6 my-auto lh-sm">
+                                                          Check your pending list of indents
+                                       <br />
+                                                           <br />
+                                                       </p>
+
+                                                   </div>
+                                               </a>
+                                           </div>
+                                       </div>
+                                       <div class="col-12 col-md-6   col-lg-3  col-xl-3 ">
+                                           <div class="list-group">
+                                               <a aria-current="page" href="/Pages_Admin/AddLedger.aspx" class='<%:Page.Title.Contains(": Ledgers")==true ? "list-group-item d-flex border-2 border-dark-primary ico bg-light-warning ":"list-group-item d-flex border-1 border-dark-secondary ico "%>'>
+                                                  
+                                                 <i class="fa-solid fa-rotate-left  fa-3x my-auto text-secondary"></i>  <div class="ms-3">
+                                                       <span class="fw-bold fs-4">Reverted Indents</span>
+                                                       <br />
+                                                       <p class="text-secondary  fs-6 my-auto lh-sm">
+                                                           Clarification on Indent, Required more details on indent
+
+                                                            
+                                                           <br />
+                                                       </p>
+
+                                                   </div>
+                                               </a>
+                                           </div>
+                                       </div>
+                                       
+
+                                   </div>
+
+                               </div>
+                           </div>
+
+                     
+                           <a class="btn btn-sm"><i class="fa-solid fa-coins fa-2x"></i>
+                               <br />
+                               Budget</a>
+                           <a class="btn btn-sm"><i class="fa-solid fa-ranking-star fa-2x"></i>
+                               <br />
+                               Status</a>
+                           <a class="btn btn-sm"><i class="fa-solid fa-arrow-rotate-left  fa-2x"></i>
+                               <br />
+                               Refund</a>
+
+                       </asp:Panel>
+                       <asp:Panel ID="pnlAccounts" runat="server" Visible="false">
+                           <a class='<%:Page.Title.Contains("Settings :")==true? " btn btn-sm dropdown has-megamenu   text-primary":" btn btn-sm dropdown has-megamenu" %>' data-bs-toggle="dropdown"><i class="fa-solid fa-gear fa-2x"></i>
+                               <br />
+                               Settings</a>
+                           <div class="dropdown-menu megamenu w-100 bg-light border-bottom border-2 border-dark-primary" role="menu">
+                               <div class="container ">
+                                   <div class="row g-1">
+                                       <div class="col-12 col-md-3   col-lg-3  col-xl-3 ">
+                                           <div class="list-group">
+                                               <a aria-current="page" href="/Pages_Admin/AddUsers.aspx" class='<%:Page.Title.Contains(": Users")==true ? "list-group-item d-flex border-2 border-dark-primary ico bg-light-warning":"list-group-item d-flex border-1 border-dark-secondary ico"%>'>
+                                                   <i class="fa-solid fa-user-group fa-3x my-auto text-dark-warning"></i>
+                                                   <div class="ms-3">
+                                                       <span class="fw-bold fs-4">Users</span>
+                                                       <br />
+                                                       <p class="text-secondary  fs-6 my-auto lh-sm">Create User for Colleges, Schools, hostels, Sections and Association</p>
+                                                   </div>
+                                               </a>
+                                           </div>
+                                       </div>
+                                       <div class="col-12 col-md-3   col-lg-3  col-xl-3 ">
+                                           <div class="list-group">
+                                               <a aria-current="page" href="/Pages_Admin/AddSections.aspx" class='<%:Page.Title.Contains(": Sections")==true ? "list-group-item d-flex border-2 border-dark-primary ico bg-light-warning":"list-group-item d-flex border-1 border-dark-secondary ico"%>'>
+                                                   <i class="fa-solid fa-layer-group fa-3x my-auto text-warning"></i>
+                                                   <div class="ms-3">
+                                                       <span class="fw-bold fs-4">Sections</span>
+                                                       <br />
+                                                       <p class="text-secondary  fs-6 my-auto lh-sm">
+                                                           Create Association Sections (Department)
+                                       <br />
+                                                           <br />
+                                                       </p>
+
+                                                   </div>
+                                               </a>
+                                           </div>
+                                       </div>
+                                       <div class="col-12 col-md-3   col-lg-3  col-xl-3 ">
+                                           <div class="list-group">
+                                               <a aria-current="page" href="/Pages_Admin/AddInstitutes.aspx" class='<%:Page.Title.Contains(": Institutes")==true ? "list-group-item d-flex border-2 border-dark-primary ico bg-light-warning":"list-group-item d-flex border-1 border-dark-secondary ico"%>'>
+                                                   <i class="fa-solid fa-landmark-dome fa-3x my-auto text-success"></i>
+                                                   <div class="ms-3">
+                                                       <span class="fw-bold fs-4">Institutes</span>
+                                                       <br />
+                                                       <p class="text-secondary  fs-6 my-auto lh-sm">
+                                                           Create Hostel, Colleges, Schools etc
+                                       <br />
+                                                           <br />
+                                                       </p>
+
+                                                   </div>
+                                               </a>
+                                           </div>
+                                       </div>
+                                       <div class="col-12 col-md-3   col-lg-3  col-xl-3 ">
+                                           <div class="list-group">
+                                               <a aria-current="page" href="/Pages_Admin/AddLedger.aspx" class='<%:Page.Title.Contains(": Ledgers")==true ? "list-group-item d-flex border-2 border-dark-primary ico bg-light-warning":"list-group-item d-flex border-1 border-dark-secondary ico"%>'>
+                                                   <i class="fa-solid fa-receipt fa-3x my-auto text-secondary"></i>
+                                                   <div class="ms-3">
+                                                       <span class="fw-bold fs-4">Ledger</span>
+                                                       <br />
+                                                       <p class="text-secondary  fs-6 my-auto lh-sm">
+                                                           Create Ledgers
+<br />
+                                                           <br />
+                                                           <br />
+                                                       </p>
+
+                                                   </div>
+                                               </a>
+                                           </div>
+                                       </div>
+                                       <div class="col-12 col-md-3   col-lg-3  col-xl-3 ">
+                                           <div class="list-group">
+                                               <a aria-current="page" href="/Pages_Admin/BudgetAllocation.aspx" class='<%:Page.Title.Contains(": Budget Allotment")==true ? "list-group-item d-flex border-2 border-dark-primary ico bg-light-warning":"list-group-item d-flex border-1 border-dark-secondary ico"%>'>
+                                                   <i class="fa-solid fa-coins fa-3x my-auto text-danger"></i>
+                                                   <div class="ms-3">
+                                                       <span class="fw-bold fs-4">Budget Allotment</span>
+                                                       <br />
+                                                       <p class="text-secondary  fs-6 my-auto lh-sm">
+                                                           Allot Budget to Institutes and Association
+
+                  <br />
+                                                           <br />
+                                                       </p>
+
+                                                   </div>
+                                               </a>
+                                           </div>
+                                       </div>
+                                       <div class="col-12 col-md-3   col-lg-3  col-xl-3 ">
+                                           <div class="list-group">
+                                               <a aria-current="page" href="/Pages_Admin/AddItems.aspx" class='<%:Page.Title.Contains(": Items Master")==true ? "list-group-item d-flex border-2 border-dark-primary ico bg-light-warning":"list-group-item d-flex border-1 border-dark-secondary ico"%>'>
+                                                   <i class="fa-solid fa-clipboard-list fa-3x my-auto text-dark-success"></i>
+                                                   <div class="ms-3">
+                                                       <span class="fw-bold fs-4">Items Master</span>
+                                                       <br />
+                                                       <p class="text-secondary  fs-6 my-auto lh-sm">
+                                                           Create / Manage Items list
+                                                           <br />
+
+                                                           <br />
+                                                           <br />
+                                                       </p>
+
+                                                   </div>
+                                               </a>
+                                           </div>
+                                       </div>
+
+                                       <div class="col-12 col-md-3   col-lg-3  col-xl-3 ">
+                                           <div class="list-group">
+                                               <a aria-current="page" href="/Pages_Admin/AddVendors.aspx" class='<%:Page.Title.Contains(": Vendors")==true ? "list-group-item d-flex border-2 border-dark-primary ico bg-light-warning":"list-group-item d-flex border-1 border-dark-secondary ico"%>'>
+
+                                                   <i class="fa-solid fa-cart-shopping fa-3x my-auto text-dark-secondary"></i>
+                                                   <div class="ms-3">
+                                                       <span class="fw-bold fs-4">Vendors Master</span>
+                                                       <br />
+                                                       <p class="text-secondary  fs-6 my-auto lh-sm">
+                                                           Create / Manage Vendors, bank details, contact details, GST, PAN etc
+
+                    
+                   <br />
+                                                       </p>
+
+                                                   </div>
+                                               </a>
+                                           </div>
+                                       </div>
+
+                                   </div>
+
+                               </div>
+                           </div>
+                           <a class="btn btn-sm  "><i class="fa-solid fa-circle-plus  fa-2x"></i>
+                               <br />
+                               Indent</a>
+                    
+                           <a class="btn btn-sm"><i class="fa-solid fa-coins fa-2x"></i>
+                               <br />
+                               Budget</a>
+                           <a class="btn btn-sm"><i class="fa-solid fa-ranking-star fa-2x"></i>
+                               <br />
+                               Status</a>
+                           <a class="btn btn-sm"><i class="fa-solid fa-arrow-rotate-left  fa-2x"></i>
+                               <br />
+                               Refund</a>
+
+                       </asp:Panel>
+                   </div>
+                   <div class="col-2 text-truncate text-end  lh-sm">
+                      
+                       <a class='<%:Page.Title=="Default"? "btn btn-sm   text-primary":"btn btn-sm" %>' href="../Default.aspx" > <i class="fa-regular fa-circle-user  fa-2x"></i>
+                           <br />
+
+                           <%:Erpusername() %>
+                       </a>
+                          
+
+                   </div>
+               </div>
+           </div>
+       </div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+  
+    </form>
+</body>
+</html>
